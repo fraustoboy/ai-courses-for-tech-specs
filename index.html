@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GenAI-курсы Академии Softline — карта технологий</title>
+<style>
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f3;
+  --bg-tertiary: #eeedeb;
+  --bg-info: #e6f1fb;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b6b6b;
+  --text-tertiary: #9a9a9a;
+  --text-info: #185fa5;
+  --border-tertiary: rgba(0,0,0,0.1);
+  --border-secondary: rgba(0,0,0,0.2);
+  --border-info: #85b7eb;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1e1e1c;
+    --bg-secondary: #2a2a28;
+    --bg-tertiary: #333331;
+    --bg-info: #0c2d4e;
+    --text-primary: #e8e6df;
+    --text-secondary: #9c9a92;
+    --text-tertiary: #6d6b65;
+    --text-info: #85b7eb;
+    --border-tertiary: rgba(255,255,255,0.1);
+    --border-secondary: rgba(255,255,255,0.2);
+    --border-info: #378add;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--bg-tertiary); color: var(--text-primary); min-height: 100vh; display: flex; justify-content: center; padding: 24px 16px; }
+.wrap { max-width: 720px; width: 100%; }
+.header { margin-bottom: 28px; }
+.header h1 { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+.section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin: 0 0 10px 4px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.need-card { flex: 1 1 calc(33.3% - 8px); min-width: 150px; padding: 10px 12px; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s; border: 1px solid var(--border-tertiary); background: var(--bg-primary); }
+.need-card:hover { border-color: var(--border-secondary); }
+.need-card.active { border-color: var(--border-info); background: var(--bg-info); }
+.need-card .title { font-size: 13px; font-weight: 500; color: var(--text-primary); line-height: 1.3; }
+.need-card .sub { font-size: 11px; color: var(--text-secondary); margin-top: 3px; line-height: 1.3; }
+.need-card.active .title { color: var(--text-info); }
+.arrow-zone { display: flex; justify-content: center; margin: 0 0 12px; color: var(--text-tertiary); font-size: 12px; }
+.mid-zone { background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 16px; margin-bottom: 20px; min-height: 80px; transition: all 0.3s; }
+.tech-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.tech-pill { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 14px; font-size: 11px; font-weight: 500; background: var(--bg-primary); border: 1px solid var(--border-tertiary); color: var(--text-secondary); transition: all 0.25s; opacity: 0.4; }
+.tech-pill.on { opacity: 1; color: var(--text-primary); border-color: var(--border-secondary); }
+.tech-pill.highlight { background: var(--bg-info); color: var(--text-info); border-color: transparent; opacity: 1; }
+.course-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.course-card { flex: 1 1 calc(50% - 8px); min-width: 200px; padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-tertiary); background: var(--bg-primary); transition: all 0.3s; opacity: 0.35; }
+.course-card.on { opacity: 1; }
+.course-card.primary { border-color: var(--border-info); opacity: 1; }
+.course-card .code { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; color: var(--text-tertiary); margin-bottom: 2px; }
+.course-card.primary .code { color: var(--text-info); }
+.course-card .cname { font-size: 13px; font-weight: 500; color: var(--text-primary); line-height: 1.3; }
+.course-card .cdesc { font-size: 11px; color: var(--text-secondary); margin-top: 3px; line-height: 1.35; }
+.hint { font-size: 11px; color: var(--text-tertiary); margin-top: 16px; line-height: 1.5; padding: 0 4px; }
+.footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border-tertiary); font-size: 11px; color: var(--text-tertiary); line-height: 1.5; }
+.footer a { color: var(--text-info); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+@media (max-width: 520px) {
+  .need-card { flex: 1 1 100%; }
+  .course-card { flex: 1 1 100%; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1>Генеративный ИИ: от бизнес-потребности к курсу</h1>
+    <p>Интерактивная карта технологий и программ обучения Академии Softline для технических специалистов. Нажмите на бизнес-потребность, чтобы увидеть связь с технологиями и курсами.</p>
+  </div>
+
+  <div class="section-label">Что сейчас нужно бизнесу</div>
+  <div class="row" id="needs"></div>
+
+  <div class="arrow-zone">&#8595; технологии, которые это решают</div>
+
+  <div class="mid-zone" id="tech-zone">
+    <div class="section-label" style="margin:0 0 10px">Технологический стек GenAI 2026</div>
+    <div class="tech-grid" id="techs"></div>
+  </div>
+
+  <div class="arrow-zone">&#8595; какие курсы закрывают</div>
+
+  <div class="section-label">Курсы академии</div>
+  <div class="course-row" id="courses"></div>
+
+  <div class="hint" id="hint">Нажмите на бизнес-потребность, чтобы увидеть связь с технологиями и курсами.</div>
+
+  <div class="footer">
+    Академия Softline &middot; <a href="mailto:academy@academyit.ru">academy@academyit.ru</a> &middot; 7 495 150 96 00
+  </div>
+</div>
+
+<script>
+const DATA = {
+  needs: [
+    {id:'base', title:'Построить AI-компетенцию', sub:'Команда не работала с NLP и нейросетями'},
+    {id:'prod', title:'Вывести модель в продакшен', sub:'Прототип есть, но медленный и дорогой'},
+    {id:'knowledge', title:'ИИ по документам компании', sub:'Ассистент, поиск по базе знаний, FAQ'},
+    {id:'auto', title:'Автоматизировать процессы', sub:'ИИ выполняет действия, а не только отвечает'},
+    {id:'safe', title:'Безопасность и контроль', sub:'Галлюцинации, утечки, регулятор, OWASP'},
+    {id:'arch', title:'Спроектировать AI-систему', sub:'Архитектура, бюджет, масштаб, риски'},
+    {id:'tune', title:'Настроить поведение модели', sub:'Тон, стиль, предпочтения пользователей'},
+    {id:'research', title:'R&D: новые архитектуры', sub:'Исследования, собственные модели'}
+  ],
+  techs: [
+    {name:'Python / PyTorch', needs:['base']},
+    {name:'Transformer', needs:['base','prod']},
+    {name:'BERT / GPT', needs:['base']},
+    {name:'LLaMA', needs:['prod','tune','knowledge']},
+    {name:'Mistral', needs:['prod']},
+    {name:'DeepSeek', needs:['prod']},
+    {name:'LoRA / fine-tuning', needs:['prod','tune']},
+    {name:'vLLM / Ollama', needs:['prod']},
+    {name:'Embeddings', needs:['knowledge']},
+    {name:'Vector DB', needs:['knowledge']},
+    {name:'RAG', needs:['knowledge','safe']},
+    {name:'GraphRAG / Neo4j', needs:['knowledge']},
+    {name:'Self-RAG', needs:['knowledge']},
+    {name:'LangChain', needs:['auto','knowledge']},
+    {name:'LangGraph', needs:['auto']},
+    {name:'LangSmith', needs:['auto']},
+    {name:'AI-агенты', needs:['auto']},
+    {name:'Human-in-the-Loop', needs:['auto','safe']},
+    {name:'Guardrails', needs:['safe']},
+    {name:'OWASP Top 10 LLM', needs:['safe']},
+    {name:'Red-teaming', needs:['safe']},
+    {name:'Prompt injection', needs:['safe']},
+    {name:'Logit control', needs:['safe']},
+    {name:'Chain-of-Thought', needs:['safe','auto']},
+    {name:'C4 Model / ADR', needs:['arch']},
+    {name:'MLOps / CI-CD', needs:['arch']},
+    {name:'FinOps', needs:['arch']},
+    {name:'HA / DR', needs:['arch']},
+    {name:'RLHF / PPO', needs:['tune']},
+    {name:'Reward Model', needs:['tune']},
+    {name:'Q-Learning', needs:['tune']},
+    {name:'D3PM', needs:['research']},
+    {name:'Diffusion-LM', needs:['research']},
+    {name:'CFG / ParaGuide', needs:['research']},
+    {name:'Latent Diffusion', needs:['research']}
+  ],
+  courses: [
+    {code:'NLP-1', name:'Natural Language Processing', hours:72, needs:['base'], desc:'Фундамент: от Python до трансформеров и промптинга'},
+    {code:'NLP-ADV', name:'Продвинутый NLP', hours:120, needs:['prod'], desc:'LLM в продакшене: fine-tuning, оптимизация, мультимодальность'},
+    {code:'RAG-1', name:'Архитектура RAG-систем', hours:40, needs:['knowledge'], desc:'Полный спектр RAG: от векторов до GraphRAG и агентного RAG'},
+    {code:'LANG-CH-PH', name:'AI-агенты на LangChain', hours:48, needs:['auto'], desc:'State-full агенты, мультиагентные системы, LangGraph'},
+    {code:'LLM-SEC', name:'Безопасность LLM-систем', hours:36, needs:['safe'], desc:'Guardrails, OWASP, red-teaming, контроль генерации'},
+    {code:'ARCH-GENAI', name:'Архитектура GenAI', hours:72, needs:['arch'], desc:'Enterprise: от пресейла до FinOps и HA/DR'},
+    {code:'RL-ML', name:'Reinforcement Learning', hours:16, needs:['tune'], desc:'RLHF, alignment, адаптация под предпочтения'},
+    {code:'DIFF-MODELS', name:'Диффузионные модели', hours:40, needs:['research'], desc:'R&D: дискретная и непрерывная диффузия для текста'}
+  ]
+};
+
+let activeNeed = null;
+
+function render() {
+  document.getElementById('needs').innerHTML = DATA.needs.map(n =>
+    '<div class="need-card' + (activeNeed === n.id ? ' active' : '') + '" onclick="toggle(\'' + n.id + '\')">' +
+      '<div class="title">' + n.title + '</div>' +
+      '<div class="sub">' + n.sub + '</div>' +
+    '</div>'
+  ).join('');
+
+  document.getElementById('techs').innerHTML = DATA.techs.map(t => {
+    let cls = 'tech-pill';
+    if (!activeNeed) cls += ' on';
+    else if (t.needs.indexOf(activeNeed) !== -1) cls += ' highlight';
+    return '<span class="' + cls + '">' + t.name + '</span>';
+  }).join('');
+
+  document.getElementById('courses').innerHTML = DATA.courses.map(c => {
+    let cls = 'course-card';
+    if (!activeNeed) cls += ' on';
+    else if (c.needs.indexOf(activeNeed) !== -1) cls += ' primary';
+    return '<div class="' + cls + '">' +
+      '<div class="code">' + c.code + ' &middot; ' + c.hours + ' ч.</div>' +
+      '<div class="cname">' + c.name + '</div>' +
+      '<div class="cdesc">' + c.desc + '</div>' +
+    '</div>';
+  }).join('');
+
+  document.getElementById('hint').textContent = activeNeed
+    ? 'Нажмите ещё раз, чтобы сбросить фильтр.'
+    : 'Нажмите на бизнес-потребность, чтобы увидеть связь с технологиями и курсами.';
+}
+
+function toggle(id) {
+  activeNeed = activeNeed === id ? null : id;
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
